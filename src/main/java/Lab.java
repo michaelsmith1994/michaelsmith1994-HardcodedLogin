@@ -15,6 +15,17 @@ public class Lab {
      * @return true if there is a successful login, and false otherwise.
      */
     public boolean login(String username, String password){
-        return false;
+        String adminKey = "qwerty";
+        String userKey = "password";
+        switch (username) {
+            //Rather than use if else statements I thought it would be far more efficient to use switch casing here.
+            case "user":
+                return password.compareTo(userKey) == 0;//compareTo can be used in boolean comparison testing against zero to check validity true/false. 
+            case "admin":
+                return password.compareTo(adminKey) == 0;
+            default:
+                return false;
+        }
+
     }
 }
